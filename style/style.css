@@ -1,0 +1,61 @@
+/* após finalização, aplicar opção para tema dark */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Fira Code', monospace;
+}
+
+/* GRID GERAL */
+
+.estrutura {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+  grid-template-areas:
+    'header header header'
+    'sidenav content anuncios'
+    'footer footer footer'
+  ;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidenav {
+  grid-area: sidenav;
+}
+
+.content {
+  grid-area: content;
+}
+
+.anuncios {
+  grid-area: anuncios;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+img {
+  max-width: 100px;
+}
+
+/* estilização da barra de rolagem */
+::-webkit-scrollbar {
+  width: .7rem;
+  height: .7rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(220, 220, 220);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: .35rem;
+  background-color: #B07DFB;
+  border: 3px solid rgb(220, 220, 220);
+}
