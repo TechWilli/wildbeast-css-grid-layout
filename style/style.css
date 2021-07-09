@@ -1,4 +1,9 @@
 /* após finalização, aplicar opção para tema dark */
+:root {
+  --clean-gray: #FAFBFC;
+  --color-gradient: linear-gradient(135deg, #8844EE, #B07DFB);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,29 +24,101 @@
     'footer footer footer'
   ;
 }
-
+/* HEADER */
 .header {
   grid-area: header;
+  background: var(--color-gradient);
+  padding: 1.875rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
 }
 
+.logo {
+  max-width: 200px;
+}
+
+.header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header nav a {
+  display: block;
+  padding: 0.75rem;
+  color: white;
+  font-size: 1.125rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+.header nav a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+/* li que vem depois de um elemento li. Dessa forma não fica a margin left no primeiro li tbm */
+.header li + li {
+  margin-left: 30px;
+}
+
+/* SIDENAV */
 .sidenav {
   grid-area: sidenav;
+  background-color: var(--clean-gray);
+  padding: 30px;
 }
 
+.sidenav li a {
+  display: block;
+  min-width: 60px;
+  max-width: 150px;
+  margin: 0 auto 30px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  transition: 200ms ease-out;
+}
+
+.sidenav li a:hover {
+  background: #B07DFB;
+}
+
+/* CONTENT */
 .content {
   grid-area: content;
 }
 
+/* ANÚNCIOS */
 .anuncios {
   grid-area: anuncios;
+  display: grid;
+  grid-gap: 30px;
+  align-content: start; /* para nao deixar as linhas com tamanho cheio */
+  background-color: var(--clean-gray);
+  padding: 30px;
 }
 
+
+
+/* FOOTER */
 .footer {
   grid-area: footer;
+  background: var(--color-gradient);
+}
+
+.footer p {
+  color: #FFFFFF;
+  text-align: center;
+  padding: 30px;
 }
 
 img {
-  max-width: 100px;
+  display: block; /* para tirar o padding padrão que elas tem */
+  max-width: 100%;
+  border-radius: 5px;
 }
 
 /* estilização da barra de rolagem */
@@ -56,6 +133,6 @@ img {
 
 ::-webkit-scrollbar-thumb {
   border-radius: .35rem;
-  background-color: #B07DFB;
+  background-color: #8844EE;
   border: 3px solid rgb(220, 220, 220);
 }
