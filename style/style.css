@@ -2,6 +2,11 @@
 :root {
   --clean-gray: #FAFBFC;
   --color-gradient: linear-gradient(135deg, #8844EE, #B07DFB);
+  /* 
+    cores para dark mode
+    texto em geral: #cdd9e5
+    background: #22272E
+  */
 }
 
 * {
@@ -89,6 +94,140 @@
 /* CONTENT */
 .content {
   grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+/* para textos que pegam as colunas de ponta a ponta */
+.col-wide {
+  grid-column: 1 / -1;
+}
+
+.imagem-1 {
+  grid-row: span 2; /* faz expandir por duas linhas, a atual + 1 */
+  /* align - vertical justify - horizontal */
+  align-self: end; /* fala com o item expecífico dentro do grid */
+  /* outras duas alternativas:
+  grid-row: 3 / span 4;
+  grid-row: 3 / 5; */
+}
+
+.imagem-3 {
+  justify-self: center;
+}
+
+.item-2 {
+  align-self: end; 
+}
+
+/* ESTILOS GERAIS DO CONTENT */
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: -0.005rem;
+  color:rgba(0, 0, 0, 0.75);
+}
+
+/* TíTULO */
+.titulo {
+  color: #B07DFB;
+}
+
+.titulo h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.titulo span {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* CARACTERÍSTICAS */
+.caracteristicas {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* divs que estão diretamente dentro da classe caracteristicas */
+.caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  background: var(--color-gradient);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+
+.caracteristicas div:first-child {
+  margin-right: 30px;
+}
+
+.caracteristicas span {
+  display: block;
+  color: #B07DFB;
+}
+
+.numero {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 10px auto;
+}
+
+.rotulo {
+  background-color: #FFFFFF;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
+}
+
+.destaque {
+  font-size: 0.85rem;
+  color: #B07DFB;
+  max-width: 20rem;
+}
+
+.citacao, .atributos {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: var(--color-gradient);
+  align-self: start;
+}
+
+.citacao p {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.atributos li {
+  color: #FFFFFF;
+  font-size: 1.125rem;
+  padding: 15px;
+}
+
+.atributos li + li {
+  border-top: 2px solid #B07DFB;
+}
+
+/* p que vem após um outro p, ignorando o primeiro */
+.informacoes p + p {
+  margin-top: 30px;
+}
+
+.informacoes p {
+  font-size: 1.115rem;
 }
 
 /* ANÚNCIOS */
@@ -100,8 +239,6 @@
   background-color: var(--clean-gray);
   padding: 30px;
 }
-
-
 
 /* FOOTER */
 .footer {

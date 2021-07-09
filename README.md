@@ -5,3 +5,9 @@
 </br>
 
 ### Recomendo a todos que queiram ter uma base sólida de como e quando usar o grid layout.
+
+</br>
+
+### Abaixo segue uma captura de tela do resultado final:
+
+<img src="./img/wildbeast-screenshot.png" alt="screenshot da tela do site wildbeast"/>
