@@ -188,6 +188,12 @@
   grid-gap: 30px;
 }
 
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
+}
+ 
 /* para textos que pegam as colunas de ponta a ponta */
 .col-wide {
   grid-column: 1 / -1;
@@ -324,6 +330,7 @@ p {
   align-content: start; /* para nao deixar as linhas com tamanho cheio */
   background-color: var(--clean-gray);
   padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* FOOTER */
@@ -340,7 +347,7 @@ p {
 
 img {
   display: block; /* para tirar o padding padrão que elas tem */
-  max-width: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 
